@@ -1,0 +1,355 @@
+swagger: '2.0'
+info:
+  title: Argent Bank (+ transactions) API documentation
+  description: This documentation contains all available API endpoints in this codebase.
+  version: 1.0.0
+  termsOfService: http://swagger.io/terms/
+host: localhost:3001
+basePath: /api/v1
+schemes:
+  - http
+paths:
+  /user/login:
+    post:
+      tags:
+        - User Module
+      summary: User Login
+      description: Endpoint for user login.
+      parameters:
+        - in: body
+          name: body
+          description: Payload for login.
+          required: true
+          schema:
+            $ref: '#/definitions/Login'
+      produces:
+        - application/json
+      responses:
+        '200':
+          description: Login successful.
+          schema:
+            $ref: '#/definitions/LoginResponse'
+        '400':
+          description: Invalid input fields.
+        '500':
+          description: Internal server error.
+  /user/signup:
+    post:
+      tags:
+        - User Module
+      summary: User Signup
+      description: Endpoint for user signup.
+      parameters:
+        - in: body
+          name: body
+          description: Payload for signup.
+          required: true
+          schema:
+            $ref: '#/definitions/User'
+      produces:
+        - application/json
+      responses:
+        '200':
+          description: Signup successful.
+          schema:
+            $ref: '#/definitions/ApiResponse'
+        '400':
+          description: Invalid input fields.
+        '500':
+          description: Internal server error.
+  /user/profile:
+    post:
+      security:
+        - Bearer: []
+      tags:
+        - User Module
+      summary: Fetch User Profile
+      description: Endpoint for fetching a user's profile.
+      parameters:
+        - in: header
+          name: Authorization
+          description: Attach Bearer JWT token.
+          type: string
+          required: true
+      produces:
+        - application/json
+      responses:
+        '200':
+          description: User profile retrieved successfully.
+          schema:
+            $ref: '#/definitions/ApiResponse'
+        '400':
+          description: Invalid input fields.
+        '500':
+          description: Internal server error.
+    put:
+      security:
+        - Bearer: []
+      tags:
+        - User Module
+      summary: Update User Profile
+      description: Endpoint for updating a user's profile.
+      parameters:
+        - in: header
+          name: Authorization
+          description: Attach Bearer JWT token.
+          type: string
+          required: true
+        - in: body
+          name: body
+          description: Payload to update user profile attributes.
+          required: true
+          schema:
+            $ref: '#/definitions/UserProfile'
+      produces:
+        - application/json
+      responses:
+        '200':
+          description: User profile updated successfully.
+          schema:
+            $ref: '#/definitions/ApiResponse'
+        '400':
+          description: Invalid input fields.
+        '500':
+          description: Internal server error.
+  /user/transactions:
+    get:
+      security:
+        - Bearer: []
+      tags:
+        - User Transactions Module
+      summary: Fetch User Transactions
+      description: Endpoint for fetching all transactions of a user for the current month.
+      parameters:
+        - in: header
+          name: Authorization
+          description: Attach Bearer JWT token.
+          type: string
+          required: true
+      produces:
+        - application/json
+      responses:
+        '200':
+          description: User transactions retrieved successfully.
+          schema:
+            $ref: '#/definitions/TransactionsList'
+        '400':
+          description: Invalid input fields.
+        '500':
+          description: Internal server error.
+    post:
+      security:
+        - Bearer: []
+      tags:
+        - User Transactions Module
+      summary: Add User Transaction
+      description: Endpoint for posting a new transaction for a specific user.
+      parameters:
+        - in: header
+          name: Authorization
+          description: Attach Bearer JWT token.
+          type: string
+          required: true
+        - in: body
+          name: body
+          description: Payload to add a transaction for this user.
+          required: true
+          schema:
+            $ref: '#/definitions/Transaction'
+      produces:
+        - application/json
+      responses:
+        '200':
+          description: User's transaction added successfully.
+          schema:
+            $ref: '#/definitions/ApiResponse'
+        '400':
+          description: Invalid input fields.
+        '500':
+          description: Internal server error.
+  /user/transactions/{transactionId}:
+    get:
+      security:
+        - Bearer: []
+      tags:
+        - User Transactions Module
+      summary: Fetch User Transaction Details
+      description: Endpoint for retrieving a specific transaction of a user.
+      parameters:
+        - in: path
+          name: transactionId
+          type: string
+          required: true
+        - in: header
+          name: Authorization
+          description: Attach Bearer JWT token.
+          type: string
+          required: true
+      produces:
+        - application/json
+      responses:
+        '200':
+          description: User's single transaction fetched successfully.
+          schema:
+            $ref: '#/definitions/Transaction'
+        '400':
+          description: Invalid input fields.
+        '500':
+          description: Internal server error.
+    put:
+      security:
+        - Bearer: []
+      tags:
+        - User Transactions Module
+      summary: Update User Transaction
+      description: Endpoint for updating a specific transaction of a user.
+      parameters:
+        - in: path
+          name: transactionId
+          type: string
+          required: true
+        - in: header
+          name: Authorization
+          description: Attach Bearer JWT token.
+          type: string
+          required: true
+        - in: body
+          name: body
+          description: Payload to update transaction's details.
+          required: true
+          schema:
+            $ref: '#/definitions/Transaction'
+      produces:
+        - application/json
+      responses:
+        '200':
+          description: User's single transaction updated successfully.
+          schema:
+            $ref: '#/definitions/ApiResponse'
+        '400':
+          description: Invalid input fields.
+        '500':
+          description: Internal server error.
+    delete:
+      security:
+        - Bearer: []
+      tags:
+        - User Transactions Module
+      summary: Delete User Transaction
+      description: Endpoint for deleting a specific transaction of a user.
+      parameters:
+        - in: path
+          name: transactionId
+          type: string
+          required: true
+        - in: header
+          name: Authorization
+          description: Attach Bearer JWT token.
+          type: string
+          required: true
+      produces:
+        - application/json
+      responses:
+        '200':
+          description: User's single transaction deleted successfully.
+          schema:
+            $ref: '#/definitions/ApiResponse'
+        '400':
+          description: Invalid input fields.
+        '500':
+          description: Internal server error.  
+securityDefinitions:
+  Bearer:
+    type: apiKey
+    name: Authorization
+    in: header
+definitions:
+  User:
+    properties:
+      email:
+        type: string
+        description: Email of the user.
+      password:
+        type: string
+        description: Password of the user.
+      firstName:
+        type: string
+        description: First name of the user.
+      lastName:
+        type: string
+        description: Last name of the user.
+  Login:
+    properties:
+      email:
+        type: string
+        description: Email of the user.
+      password:
+        type: string
+        description: Password of the user.
+  ApiResponse:
+    type: object
+    properties:
+      status:
+        type: integer
+      message:
+        type: string
+      body:
+        type: object
+        properties:
+          id:
+            type: string
+          email:
+            type: string
+  LoginResponse:
+    type: object
+    properties:
+      token:
+        type: string
+  UserProfile:
+    type: object
+    properties:
+      firstName:
+        type: string
+      lastName:
+        type: string
+  TransactionsList:
+    type: object
+    properties:
+      status:
+        type: integer
+      message:
+        type: string
+      body:
+        type: object
+        properties:
+          transactions:
+            type: array
+            items:
+              $ref: '#/definitions/Transaction'
+  Transaction:
+    type: object
+    properties:
+      id:
+        type: number
+        description: ID of the transaction.
+      date:
+        type: string
+        description: Date of the transaction.
+      description:
+        type: string
+        description: Description of the transaction.
+      amount:
+        type: number
+        description: Amount of the transaction.
+      balance:
+        type: number
+        description: Balance after the transaction.
+      type:
+        type: string
+        description: Type of the transaction.
+      category:
+        type: string
+        description: Category of the transaction.
+      notes:
+        type: string
+        description: Notes for the transaction.

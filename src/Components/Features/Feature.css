@@ -1,0 +1,24 @@
+.features img {
+    width: 100px;
+    border: 10px solid #00bc77;
+    border-radius: 50%;
+    padding: 1rem;
+}
+.features{
+    display: flex;
+    flex-direction: column;
+    width: 600px;
+    align-items: center;
+}
+.features H2 {
+    color: #222;
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 0.2rem;
+}
+
+.features p {
+    text-align: center;
+    font-size: 1.1rem;
+    color: #2c3e50;
+}

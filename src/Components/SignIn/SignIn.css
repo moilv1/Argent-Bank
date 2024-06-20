@@ -1,0 +1,55 @@
+.SignInSection{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-self: center;
+    align-items: center;
+    box-sizing: border-box;
+    background-color: white;
+    width: 300px;
+    margin: 0 auto;
+    margin-top: 3rem;
+    padding: 2rem;
+}
+
+.SignInSection h1 {
+    text-align: center;
+    color: #2c3e50;
+}
+.input{
+    display: flex;
+    flex-direction: column;
+    color: #2c3e50;
+    font-weight: bold;
+    width: 240px;
+    gap: 3px;
+}
+
+.input input{
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.SignInSection form input{
+    margin-bottom: 10px;
+}
+
+.SignInSection button {
+display: block;
+width: 100%;
+padding: 8px;
+font-size: 1.1rem;
+font-weight: bold;
+margin-top: 1rem;
+border-color: #00bc77;
+background-color: #00bc77;
+color: #fff;
+text-decoration: underline;
+}
+
+.SignInMain{
+    padding-top: 80Px;
+    padding-bottom:310Px;
+    background-color: #12002b;
+    height: 100%;
+}

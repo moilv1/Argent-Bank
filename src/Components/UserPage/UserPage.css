@@ -1,0 +1,63 @@
+.UserMain{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: #12002b;
+    color: #fff;
+    padding-bottom: 50px ;
+    gap: 20px ;
+}
+.UserSection {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+.FormChangeName{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.NameButton{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-color: #00bc77;
+    background-color: #00bc77;
+    color: #fff;
+    font-weight: bold;
+    padding: 10px;
+}
+.BtnChangeName{
+    border-color: #12002b;
+    background-color: white;
+    color: #12002b;
+    font-weight: bold;
+    padding: 10px;
+    width: 100px;
+}
+.DivBtnChangeName{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+
+}
+.InputChangeName{
+    padding: 10px;
+    border-color: gray;
+    border-radius: 5px;
+    width: 200px;
+}
+.DivInputChangeName{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+.unclickable{
+    pointer-events: none;
+    background-color: rgb(126, 126, 126);
+}

@@ -1,0 +1,33 @@
+.main-nav{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 30PX 10px 10px;
+  
+}
+
+.main-nav-item{
+    display: flex;
+    font-weight: bold;
+    color: #2c3e50;
+    align-items: center;
+    text-decoration: none;
+    gap: 10px;
+    font-size: 18px;
+}
+
+.NavLinkSign {
+    text-decoration: none;
+}
+
+.main-nav-logo-image {
+    max-width: 100%;
+    width: 200px;
+}
+
+.profilNav {
+    display: flex;
+    flex-direction: row;
+    gap:  20px;
+}
