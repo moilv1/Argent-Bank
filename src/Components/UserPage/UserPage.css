@@ -49,9 +49,6 @@
     border-radius: 5px;
     width: 200px;
 }
-.InputChangeName::placeholder{
-    color: black;
-}
 .DivInputChangeName{
     display: flex;
     flex-direction: column;
@@ -59,8 +56,10 @@
     align-items: center;
     gap: 10px;
 }
-
 .unclickable{
     pointer-events: none;
     background-color: rgb(126, 126, 126);
+}
+.unclickable::placeholder{
+    color: black;
 }
