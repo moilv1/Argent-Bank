@@ -11,6 +11,7 @@ const SignIn = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const navigate = useNavigate();
+  let ErrorLogMessage = document.getElementById('ErrorLogContainer');
  
 
   const handleSignIn = async () => {
@@ -37,10 +38,12 @@ const SignIn = () => {
       }));
   
       localStorage.setItem("token", data.body.token);
+      ErrorLogMessage.style.display = "none"
       navigate('/user');
   
     } catch (error) {
       console.error("Erreur lors de la connexion :", error.message);
+      ErrorLogMessage.style.display = 'flex';
     }
   };
 
@@ -61,6 +64,11 @@ const SignIn = () => {
         <section className='SignInSection'>
           <i className='fa fa-user-circle' />
           <h1> Sign In </h1>
+          <div id='ErrorLogContainer'>
+            <p className='ErrorLogMessage'>
+              Erreur dans l'identifiant et/ou le mot de passe.
+            </p>
+          </div>
           <form>
             <div className='input'>
               <label>Username</label>

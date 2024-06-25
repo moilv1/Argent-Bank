@@ -53,3 +53,7 @@ text-decoration: underline;
     background-color: #12002b;
     height: 100%;
 }
+
+#ErrorLogContainer{
+    display: none;
+}

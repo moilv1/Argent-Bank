@@ -312,6 +312,8 @@ definitions:
         type: string
       lastName:
         type: string
+      userName:
+        type: string
   TransactionsList:
     type: object
     properties:

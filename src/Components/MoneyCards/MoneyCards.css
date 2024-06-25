@@ -23,12 +23,10 @@
     margin-bottom: px;
     font-size: 20px ;
     color: #000;
-    position: relative;
   }
 
   .accountTitle {
-    position: absolute;
-    width: 100%;
+   width: 100%;
    margin-top: 20px;
    font-size: 18px;
    color: #000;
@@ -36,9 +34,7 @@
   
 
   .accountDescription{   
-    position: absolute;
     width: 100%;
-    bottom: 7px;
     font-size: 16px;
     color: #000;
   }
@@ -55,5 +51,23 @@
     
 .accountAmount{
   font-size: 40px;
-}
+  margin-top: 0px;
+  margin-bottom: 0px;
   
+}
+@media screen and (max-width:550px) {
+  .account {
+    width: 90%;
+  }
+  .transactionButton {
+    width: 100%;
+    font-size: 12px;
+  }
+  .accountContent {
+    padding-left: 5px;
+    font-size: 16px ;
+  }
+  .accountAmount{
+    font-size: 28px;
+  }
+}

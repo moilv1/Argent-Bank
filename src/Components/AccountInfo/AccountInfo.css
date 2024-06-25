@@ -40,7 +40,6 @@
 }
   .transactionCard{
     width: 40%;
-
     margin-top: 10px;
     padding-left: 50px;
     display: flex;
@@ -118,4 +117,63 @@
     }
     
     
+  }
+  @media screen and (max-width: 425px) {
+    .DATEHeader{ margin-right: 5%; } 
+    .DescHeader{ margin-right: 5%; } 
+    .AmountHeader{ margin-right: 5%; } 
+    .BalanceHeader{ margin-right: 5%; }
+    .transactionHeader{ font-size: 15px; }
+    .transactionCard{ width: 80%; padding: -15px; }
+    .transactionDetails i { top: 35px; }
+    .transactionDetails{
+      gap: 15px;
+      padding: 0px;
+    }
+  }
+  @media screen and (min-width:426px) and (max-width: 768px) {
+    .DATEHeader{ margin-right: 8%; } 
+    .DescHeader{ margin-right: 8%; } 
+    .AmountHeader{ margin-right: 8%; } 
+    .BalanceHeader{ margin-right: 8%; }
+    .transactionCard{ width: 80%; padding-left: 40px; }
+    .transactionDetails i { top: 20px; }
+    .transactionDetails{
+      gap: 25px;
+      padding: 0px;
+    }
+  }
+
+  @media screen and (min-width:769px) and (max-width: 1024px) {
+    .DATEHeader{ margin-right: 8%; } 
+    .DescHeader{ margin-right: 8%; } 
+    .AmountHeader{ margin-right: 8%; } 
+    .BalanceHeader{ margin-right: 8%; }
+    .transactionCard{ padding-left: 40px; }
+    .transactionDetails i { top: 20px; }
+    .transactionDetails{
+      gap: 25px;
+      padding: 0px;
+    }
+  }
+
+  @media screen and (min-width:1024px) and (max-width: 1440px) {
+    .DATEHeader{
+      margin-right: 0%;
+    }
+    .DescHeader{
+      margin-right: 0%;
+      margin-left: 26%;
+    }
+    .AmountHeader{
+      margin-right: 0%;
+      margin-left: 22%;
+    }
+    .BalanceHeader{
+      margin-right: 0%;
+      margin-left: 23%;
+    }
+    .transactionDetails{
+      gap: 120px;
+    }
   }

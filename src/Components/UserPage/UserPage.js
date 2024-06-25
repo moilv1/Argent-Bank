@@ -102,7 +102,7 @@ export default function UserPage() {
         <label for='Firstname'>First name: </label>
         <input className="InputChangeName unclickable" value={firstName} disabled name='Firstname' placeholder={user.firstName}/>
         <label for='Firstname'>Last name: </label>
-        <input className="InputChangeName unclickable" value={lastName} disabled  placeholder={user.lastName} />
+        <input className="InputChangeName unclickable" value={lastName} disabled name='Lastname' placeholder={user.lastName} />
         <label for='Firstname'>User name: </label>
         <input className="InputChangeName" value={userName} onChange={e => setUserName(e.target.value)}  placeholder={user.userName} />
         </div>

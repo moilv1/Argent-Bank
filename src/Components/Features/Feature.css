@@ -22,3 +22,32 @@
     font-size: 1.1rem;
     color: #2c3e50;
 }
+@media screen and (max-width: 375px) {
+    .features{
+        width: 100px;
+    }  
+    .features img {
+        width: 42px;
+    }
+    .features H2 {
+        font-size: 1.2rem;
+    }
+    .features p {
+        font-size: 0.9rem;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .features{
+        width: 150px;
+    }  
+    .features img {
+        width: 42px;
+    }
+    .features H2 {
+        font-size: 1.3rem;
+    }
+    .features p {
+        font-size: 1rem;
+    }
+}
